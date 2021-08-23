@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # Display all
+  get "schools", to: "schools#index"
+  # Display one
+  get "schools/:id", to: "schools#show", as: :school
 end

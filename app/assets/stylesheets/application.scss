@@ -1,1 +1,108 @@
 @import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap');
+
+* {
+  -webkit-font-smoothing: antialiased;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+nav {
+  height: 80px;
+  width: 100vw;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 0px 1px 10px #00000010;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  #logo {
+    font-size: 24px;
+    font-family: 'Urbanist', sans-serif;
+  }
+}
+
+#search-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  width: 40vw;
+  padding: 12px 0;
+  margin-bottom: 0px;
+  border: 0;
+  border-radius: 50px;
+  font-size: 14.4px;
+  background-color: #F7F7F8;
+  text-indent: 0;
+  color: #343538;
+  outline: 0;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: 0 2px 4px 0 #0000000d inset;
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 22px;
+  font-weight: 300;
+}
+
+
+body{
+  margin-top: 80px;
+}
+
+.schools-page {
+  display: flex;
+  h1 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 24px 0px 24px 16px;
+  }
+  .schools {
+    width: 55vw;
+    background-color: #ffffff;
+    padding: 16px;
+    ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+    li {
+      border-top: 1px solid #ebebeb;
+      padding: 16px;
+      display: flex;
+      .image-wrapper {
+        height: 200px;
+        width: 300px;
+        background-color: #f7f7f8;
+        border-radius: 12px;
+        margin-right: 16px;
+      }
+    }
+  }
+  .map {
+    width: 45vw;
+    background-color: #f7f7f8;
+    position: sticky;
+    height: 100vh;
+    top: 80px;
+  }
+}
+
+.school-details {
+  font-weight: 300;
+  font-size: 14.4px;
+  h2 {
+    font-size: 18px;
+    font-weight: 300;
+  }
+}

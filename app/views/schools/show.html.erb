@@ -1,0 +1,15 @@
+<p>
+  <small><%= @school.school_type %></small>
+</p>
+<h1><%= @school.name %></h1>
+<p><%= @school.address %></p>
+<p>
+  <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
+</p>
+<p>
+  Achieved Grade 5 or above: <%= @school.grade_5_or_above %>%
+</p>
+<p>
+  Achieved AAB or above: <%= @school.aab_or_above %>%
+</p>
+<p><%= @school.summary %></p>

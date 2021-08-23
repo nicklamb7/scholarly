@@ -1,0 +1,34 @@
+<div class="schools-page">
+  <div class="schools">
+  <h1>Schools in England</h1>
+    <ul>
+      <% @schools.each do |school| %>
+      <li>
+        <div class="image-wrapper">
+          <img src="" alt="">
+        </div>
+        <div class="school-details">
+        <p>
+          <small><%= school.school_type %></small>
+        </p>
+        <h2>
+          <%= link_to school.name, school_path(school) %>
+        </h2>
+        <p>
+          <small>Founded in <%= school.founded_at %> · <%= school.number_of_pupils %> pupils · £<%= school.price %>/term </small>
+        </p>
+        <p>
+          Achieved Grade 5 or above: <%= school.grade_5_or_above %>%
+        </p>
+        <p>
+          Achieved AAB or above: <%= school.aab_or_above %>%
+        </p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="map">
+    Map
+  </div>
+</div>
