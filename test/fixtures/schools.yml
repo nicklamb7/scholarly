@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  school_type: MyString
+  address: MyString
+  summary: MyString
+  founded_at: 1
+  price: 1
+  number_of_pupils: 1
+  grade_5_or_above: 1
+  aab_or_above: 1.5
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  name: MyString
+  school_type: MyString
+  address: MyString
+  summary: MyString
+  founded_at: 1
+  price: 1
+  number_of_pupils: 1
+  grade_5_or_above: 1
+  aab_or_above: 1.5
+  latitude: 1.5
+  longitude: 1.5
