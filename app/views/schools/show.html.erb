@@ -1,8 +1,13 @@
+<div class="container school-show-page">
 <p>
   <small><%= @school.school_type %></small>
 </p>
 <h1><%= @school.name %></h1>
 <p><%= @school.address %></p>
+<%= timeline [
+  ["Tiffin", "1880-04-29", "2010-04-29"],
+  ["Jefferson", "1801-03-03", "1880-04-29"]
+] %>
 <p>
   <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
 </p>
@@ -13,3 +18,4 @@
   Achieved AAB or above: <%= @school.aab_or_above %>%
 </p>
 <p><%= @school.summary %></p>
+</div>
