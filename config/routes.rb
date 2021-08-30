@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Display all
-  get "schools", to: "schools#index"
-  # Display one
-  get "schools/:id", to: "schools#show", as: :school
+  devise_for :users
+  root to: "pages#home"
+  resources :schools do
+    resources :reviews, only: [ :new, :create ]
+  end
+  resources :reviews, only: [ :destroy ]
 end

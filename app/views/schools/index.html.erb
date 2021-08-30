@@ -1,6 +1,6 @@
 <div class="schools-page">
   <div class="schools">
-  <h1>Schools in England</h1>
+    <h1>Schools in England</h1>
     <ul>
       <% @schools.each do |school| %>
       <li>
@@ -28,7 +28,12 @@
       <% end %>
     </ul>
   </div>
-  <div class="map">
-    Map
+  <div class="map-section">
+    <div
+      id="map"
+      style="width: 100%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="pk.eyJ1IjoibmljazIzNDIzNDIiLCJhIjoiY2tzMGYybTN1MWpvejJ1cHNrczV4YmFiNyJ9.YOnTvBEhpVi6_j0XJHu3Sw">
+    </div>
   </div>
 </div>

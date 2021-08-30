@@ -1,0 +1,61 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  birmingham: 1
+  bristol: 1
+  cambridge: 1
+  cardiff: 1
+  durham: 1
+  edinburgh: 1
+  exeter: 1
+  glasgow: 1
+  imperial: 1
+  kcl: 1
+  leeds: 1
+  liverpool: 1
+  lse: 1
+  manchester: 1
+  newcastle: 1
+  nottingham: 1
+  oxford: 1
+  qmul: 1
+  queens: 1
+  sheffield: 1
+  southampton: 1
+  ucl: 1
+  warwick: 1
+  york: 1
+  st_andrews: 1
+  bath: 1
+  loughborough: 1
+  lancaster: 1
+
+two:
+  birmingham: 1
+  bristol: 1
+  cambridge: 1
+  cardiff: 1
+  durham: 1
+  edinburgh: 1
+  exeter: 1
+  glasgow: 1
+  imperial: 1
+  kcl: 1
+  leeds: 1
+  liverpool: 1
+  lse: 1
+  manchester: 1
+  newcastle: 1
+  nottingham: 1
+  oxford: 1
+  qmul: 1
+  queens: 1
+  sheffield: 1
+  southampton: 1
+  ucl: 1
+  warwick: 1
+  york: 1
+  st_andrews: 1
+  bath: 1
+  loughborough: 1
+  lancaster: 1

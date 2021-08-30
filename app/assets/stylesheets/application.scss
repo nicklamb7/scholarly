@@ -1,5 +1,6 @@
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap');
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -7,26 +8,67 @@
 }
 
 nav {
-  height: 80px;
-  width: 100vw;
-  background-color: #000000;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  padding-left: 40px;
-  padding-right: 40px;
+  height: 80px !important;
+  width: 100vw !important;
+  background-color: #000000 !important;
+  position: fixed !important;
+  top: 0px !important;
+  left: 0px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
   box-shadow: 0px 1px 10px #00000050;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  color: #fff !important;
+  z-index: 100 !important;
+  .left-section {
+    display: flex;
+    align-items: center;
+  }
+  .middle-section {
+    form {
+      display: flex;
+      align-items: center;
+      width: 50vw;
+      padding-left: 75px;
+    }
+    .btn {
+      position: relative;
+      right: 80px;
+      background-color: transparent;
+      border: none;
+      color: #FFA027;
+    }
+  }
+  .right-section {
+    display: flex;
+  }
+  .right-section ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    li {
+      color: #fff;
+      margin: 0px 8px;
+    }
+    a {
+      color: #fff;
+    }
+  }
+
   #logo {
     font-size: 24px;
     font-family: 'Urbanist', sans-serif;
+    margin: 0px;
+    color: #fff;
+  }
+  svg {
+    margin: 16px;
   }
 }
 
-#search-bar {
+.middle-section #query {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -36,15 +78,15 @@ nav {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  width: 40vw;
+  width: 100%;
   padding: 12px 0;
   margin-bottom: 0px;
   border: 0;
   border-radius: 50px;
   font-size: 14.4px;
-  background-color: #Fff;
+  background-color: #282828;
   text-indent: 0;
-  color: #343538;
+  color: #ffffff;
   outline: 0;
   height: 100%;
   -webkit-appearance: none;
@@ -59,7 +101,7 @@ nav {
 
 
 body{
-  margin-top: 80px;
+  margin-top: 80px !important;
   background-color: #121212;
 }
 
@@ -98,12 +140,12 @@ body{
       }
     }
   }
-  .map {
+  .map-section {
     width: 45vw;
-    background-color: #282828;
     position: sticky;
     height: 100vh;
     top: 80px;
+    background-color: #282828;
   }
 }
 
@@ -118,6 +160,9 @@ body{
 
 .school-show-page {
   background-color: #121212;
-  padding: 16px;
+  padding: 16px 160px;
   color: #fff;
+  h1 {
+    font-size: 26px;
+  }
 }

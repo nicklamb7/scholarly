@@ -4,25 +4,16 @@
     <title>Scholarly</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_pack_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   </head>
-
   <body>
-    <nav>
-      <div class="left-section">
-        <span id="logo">scholarly</span>
-      </div>
-      <div class="middle-section">
-        <form>
-          <input type="text" placeholder="Search schools..." id="search-bar">
-        </form>
-      </div>
-      <div class="right-section">
-        <span>Profile</span>
-      </div>
-    </nav>
+    <%= render 'shared/navbar' %>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'shared/flashes' %>
   </body>
 </html>
