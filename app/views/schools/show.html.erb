@@ -5,7 +5,7 @@
   <h1><%= @school.name %></h1>
 <p><%= @school.address %></p>
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%= line_chart School.group_by_day(:created_at).count %>
+<%= line_chart School.pluck(:grade_5_or_above, :aab_or_above), suffix: "%", xtitle: "Year", ytitle: "AAB or above", loading: "Loading...", empty: "No data", title: "AAB or above" %>
 <p>
   <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
 </p>
@@ -17,6 +17,10 @@
 </p>
 <p><%= @school.summary %></p>
   <%= link_to 'Back', schools_path %> |
+  <%= link_to "Delete #{@school.name}",
+            school_path(@school),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
 <h2>
   <%= pluralize @school.reviews.size, "review" %>
 </h2>

@@ -22,4 +22,38 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
     @review = Review.new
   end
+
+  def create
+    @school = School.new(school_params)
+    @school.save
+    redirect_to school_path(@school)
+  end
+
+  def new
+    @school = School.new
+  end
+
+  def edit
+    @school = School.find(params[:id])
+  end
+
+  def update
+    @school = School.find(params[:id])
+    @school.update(school_params)
+    redirect_to school_path(@school)
+  end
+
+  def destroy
+    @school = School.find(params[:id])
+    @school.destroy
+
+    redirect_to schools_path
+  end
+
+  private
+
+  def school_params
+    params.require(:school).permit(:name, :school_type, :address, :summary, :founded_at, :price, :number_of_pupils, :grade_5_or_above, :aab_or_above)
+  end
+
 end
