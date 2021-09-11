@@ -1,0 +1,10 @@
+<h1>Leavers Destinations in UK</h1>
+  <ul>
+    <% @destinations.each do |destination| %>
+    <li>
+      <p>University:<%= destination.university %></p>
+      <p>Number:<%= destination.number_of_students %></p>
+    </li>
+    <% end %>
+  </ul>
+</div>

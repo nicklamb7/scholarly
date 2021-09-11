@@ -10,42 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_220352) do
+ActiveRecord::Schema.define(version: 2021_09_05_102916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "destinations", force: :cascade do |t|
-    t.integer "birmingham"
-    t.integer "bristol"
-    t.integer "cambridge"
-    t.integer "cardiff"
-    t.integer "durham"
-    t.integer "edinburgh"
-    t.integer "exeter"
-    t.integer "glasgow"
-    t.integer "imperial"
-    t.integer "kcl"
-    t.integer "leeds"
-    t.integer "liverpool"
-    t.integer "lse"
-    t.integer "manchester"
-    t.integer "newcastle"
-    t.integer "nottingham"
-    t.integer "oxford"
-    t.integer "qmul"
-    t.integer "queens"
-    t.integer "sheffield"
-    t.integer "southampton"
-    t.integer "ucl"
-    t.integer "warwick"
-    t.integer "york"
-    t.integer "st_andrews"
-    t.integer "bath"
-    t.integer "loughborough"
-    t.integer "lancaster"
+    t.integer "university"
+    t.integer "number_of_students"
+    t.bigint "school_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["school_id"], name: "index_destinations_on_school_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -84,5 +60,6 @@ ActiveRecord::Schema.define(version: 2021_08_30_220352) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "destinations", "schools"
   add_foreign_key "reviews", "schools"
 end
