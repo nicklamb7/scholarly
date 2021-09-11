@@ -1,0 +1,7 @@
+<%= simple_form_for [ @school, @destination ] do |f| %>
+  <%= f.label :university %>
+  <%= f.select :university, Destination.universities.keys.to_a %>
+  <%= f.label :number_of_students %>
+  <%= f.number_field :number_of_students %>
+  <%= f.submit %>
+<% end %>
