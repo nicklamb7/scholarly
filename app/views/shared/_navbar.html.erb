@@ -10,9 +10,6 @@
       <li class="nav-item">
         <%= link_to "Scholarships", scholarships_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "For You", articles_path, class: "nav-link" %>
-      </li>
     </ul>
   </div>
   <div class="middle-section">
@@ -28,7 +25,12 @@
   <div class="right-section">
   <ul>
   <% if user_signed_in? %>
-    <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+      <li class="nav-item">
+        <%= link_to "For You", articles_path, class: "nav-link" %>
+      </li>
+    <li>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    </li>
   <% else %>
     <li class="nav-item">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>

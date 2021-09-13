@@ -1,17 +1,24 @@
 <div class="school-show-page">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @school.cover.key, height: 200, width: 720, crop: :fill if @school.cover.attached? == true   %>')">
-    <p>
-      <small><%= @school.school_type %></small>
-    </p>
+  <div class="cover-section">
+    <div class="cover-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @school.cover.key, height: 200, width: 1120, crop: :fill if @school.cover.attached? == true   %>')">
+
+    </div>
+    <div class="cover-section-details">
+      <div class="logo-image">
+        <%= cl_image_tag @school.logo.key, height: 100, width: 100, crop: :fill if @school.logo.attached? == true  %>
+      </div>
+      <h1><%= @school.name %></h1>
+    </div>
   </div>
-  <%= cl_image_tag @school.logo.key, height: 100, width: 100, crop: :fill if @school.logo.attached? == true  %>
-  <h1><%= @school.name %></h1>
 <p><%= @school.address %></p>
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
 <%= cl_image_tag @school.thumbnail.key, height: 300, width: 400, crop: :fill if @school.thumbnail.attached? == true %>
 <%= line_chart School.pluck(:grade_5_or_above, :aab_or_above), suffix: "%", xtitle: "Year", ytitle: "AAB or above", loading: "Loading...", empty: "No data", title: "AAB or above" %>
 <p>
   <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
+</p>
+<p>
+  <small><%= @school.school_type %></small>
 </p>
 <p>
   Achieved Grade 5 or above: <%= @school.grade_5_or_above %>%
