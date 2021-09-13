@@ -1,0 +1,23 @@
+.cover-image {
+  height: 200px;
+  width: 1120px;
+  border-radius: 12px;
+  background-repeat: no-repeat;
+}
+.logo-image {
+  position: relative;
+  bottom: 50px;
+  left: 16px;
+  img {
+    border-radius: 4px;
+  }
+}
+.cover-section {
+  height: 320px;
+  .cover-section-details {
+    display: flex;
+  }
+  h1 {
+    margin: 16px 32px;
+  }
+}
