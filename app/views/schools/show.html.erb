@@ -1,7 +1,10 @@
 <div class="school-show-page">
-  <p>
-    <small><%= @school.school_type %></small>
-  </p>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @school.cover.key, height: 200, width: 720, crop: :fill if @school.cover.attached? == true   %>')">
+    <p>
+      <small><%= @school.school_type %></small>
+    </p>
+  </div>
+  <%= cl_image_tag @school.logo.key, height: 100, width: 100, crop: :fill if @school.logo.attached? == true  %>
   <h1><%= @school.name %></h1>
 <p><%= @school.address %></p>
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
