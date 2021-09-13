@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [ :destroy ]
   resources :scholarships, only: [ :index, :destroy ]
+  resources :articles
 end
