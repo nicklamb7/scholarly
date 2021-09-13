@@ -1,0 +1,12 @@
+<h1>Scholarships</h1>
+<div>
+  <ul>
+    <% @scholarships.each do |scholarship| %>
+    <li>
+      <p><%= scholarship.school.name %></p>
+      <p><%= scholarship.title %></p>
+      <p><%= scholarship.description %></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
