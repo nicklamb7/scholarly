@@ -20,7 +20,20 @@
     <li class="list-group-item"><%= destination.university %>: <%= destination.number_of_students %></li>
   <% end %>
 </ul>
-<p><%= link_to "Leavers Destinations", school_destinations_path(@school) %></p>
+
+<p><%= link_to 'Add a scholarship', new_school_scholarship_path(@school) %></p>
+<ul class="list-group">
+  <% @school.scholarships.each do |scholarship| %>
+    <li class="list-group-item">
+      <%= scholarship.title %>
+      <%= scholarship.description %>
+      <%= link_to "Remove",
+            scholarship_path(scholarship),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
 <p><%= @school.summary %></p>
   <%= link_to 'Edit', edit_school_path(@school) %> |
   <%= link_to 'Back', schools_path %> |
