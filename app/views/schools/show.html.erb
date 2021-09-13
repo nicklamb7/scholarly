@@ -5,6 +5,7 @@
   <h1><%= @school.name %></h1>
 <p><%= @school.address %></p>
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<%= cl_image_tag @school.thumbnail.key, height: 300, width: 400, crop: :fill if @school.thumbnail.attached? == true %>
 <%= line_chart School.pluck(:grade_5_or_above, :aab_or_above), suffix: "%", xtitle: "Year", ytitle: "AAB or above", loading: "Loading...", empty: "No data", title: "AAB or above" %>
 <p>
   <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
