@@ -2,6 +2,8 @@ class School < ApplicationRecord
   has_many :destinations, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :scholarships, dependent: :destroy
+  has_one_attached :thumbnail
+  has_many_attached :photos, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 

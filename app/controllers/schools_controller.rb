@@ -53,7 +53,7 @@ class SchoolsController < ApplicationController
   private
 
   def school_params
-    params.require(:school).permit(:name, :school_type, :address, :summary, :founded_at, :price, :number_of_pupils, :grade_5_or_above, :aab_or_above)
+    params.require(:school).permit(:name, :school_type, :address, :summary, :founded_at, :price, :number_of_pupils, :grade_5_or_above, :aab_or_above, :thumbnail )
   end
 
 end

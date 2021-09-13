@@ -6,9 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
 
-puts 'Creating 100 fake schools...'
-100.times do
+# file = URI.open('https://images.unsplash.com/photo-1593694747763-f4a6b8e42459?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1647&q=80')
+
+puts 'Creating 20 fake schools...'
+20.times do
   school = School.new(
     name:    Faker::Educator.secondary_school,
     school_type: "Academy",
@@ -22,6 +25,7 @@ puts 'Creating 100 fake schools...'
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude,
   )
+  # school.photo.attach(io: file, filename: 'school.png', content_type: 'image/png')
   school.save!
 end
 puts 'Finished!'
