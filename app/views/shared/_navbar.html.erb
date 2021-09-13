@@ -3,6 +3,11 @@
     <%= link_to "/", class: "navbar-brand " do %>
       <p id="logo">scholarly</p>
     <% end %>
+    <ul>
+      <li class="nav-item">
+        <%= link_to "Schools", schools_path, class: "nav-link" %>
+      </li>
+    </ul>
   </div>
   <div class="middle-section">
     <%= form_tag schools_path, method: :get do %>

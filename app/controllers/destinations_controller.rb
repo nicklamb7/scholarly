@@ -4,11 +4,14 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @school = School.find(params[:school_id])
     @destination = Destination.new(destination_params)
+    @school = School.find(params[:school_id])
     @destination.school = @school
-    @destination.save
-    redirect_to school_destinations_path
+    if @destination.save
+      redirect_to school_path(@school)
+    else
+      render :new
+    end
   end
 
   def new

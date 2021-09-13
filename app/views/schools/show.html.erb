@@ -15,13 +15,20 @@
 <p>
   Achieved AAB or above: <%= @school.aab_or_above %>%
 </p>
+<ul class="list-group">
+  <% @school.destinations.each do |destination| %>
+    <li class="list-group-item"><%= destination.university %>: <%= destination.number_of_students %></li>
+  <% end %>
+</ul>
+<p><%= link_to "Leavers Destinations", school_destinations_path(@school) %></p>
 <p><%= @school.summary %></p>
   <%= link_to 'Edit', edit_school_path(@school) %> |
   <%= link_to 'Back', schools_path %> |
   <%= link_to "Delete #{@school.name}",
             school_path(@school),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" } %> |
+<%= link_to 'Add a destination', new_school_destination_path(@school) %>
 <h2>
   <%= pluralize @school.reviews.size, "review" %>
 </h2>
