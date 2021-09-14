@@ -1,14 +1,15 @@
-<h1>Articles</h1>
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= article.date %>
-      <%= article.title %>
-      <%= article.description %>
-      <%= link_to "Delete",
-            article_path(article),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
+<div id="articles-index-page">
+  <ul>
+    <% @articles.each do |article| %>
+      <li class="col-8">
+        <%= article.date %>
+        <%= article.title %>
+        <%= article.description %>
+        <%= link_to "Delete",
+              article_path(article),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ul>
+</div>
