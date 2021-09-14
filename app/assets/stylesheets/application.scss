@@ -129,7 +129,7 @@ body{
   h1 {
     font-size: 24px;
     font-weight: 300;
-    margin: 24px 0px 24px 16px;
+    margin: 24px 0px 24px 24px;
   }
   .schools {
     width: 55vw;
@@ -142,7 +142,7 @@ body{
     }
     li {
       border-top: 1px solid #303030;
-      padding: 16px;
+      padding: 16px 24px;
       display: flex;
       .image-wrapper {
         height: 175px;
