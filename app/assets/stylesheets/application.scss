@@ -7,6 +7,7 @@
 @import "schools/show";
 @import "components/sidebar";
 @import "articles/index";
+@import "scholarships/index";
 @import "jquery-bar-rating/dist/themes/css-stars";
 
 * {
@@ -38,8 +39,16 @@ nav {
       align-items: center;
       padding: 0px;
       margin: 0px;
+      li {
+        margin-right: 8px;
+      }
       a {
         color: #ffffff;
+        &:hover {
+          color: #FFA027;
+          background-color: #282828;
+          border-radius: 4px;
+        }
       }
     }
   }
@@ -61,6 +70,14 @@ nav {
   }
   .right-section {
     display: flex;
+    li {
+      margin-right: 4px;
+    }
+    a:hover {
+      color: #FFA027;
+      background-color: #282828;
+      border-radius: 4px;
+    }
   }
   .right-section ul {
     display: flex;
@@ -71,6 +88,7 @@ nav {
     li {
       color: #fff;
       margin: 0px 8px;
+      margin-right: 8px;
     }
     a {
       color: #fff;
