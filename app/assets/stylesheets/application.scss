@@ -5,6 +5,7 @@
 @import "users/login";
 @import "pages/home";
 @import "schools/show";
+@import "components/sidebar";
 @import "jquery-bar-rating/dist/themes/css-stars";
 
 * {
@@ -42,10 +43,11 @@ nav {
     }
   }
   .middle-section {
+    flex-grow: 1;
     form {
       display: flex;
       align-items: center;
-      width: 50vw;
+
       padding-left: 75px;
     }
     .btn {
@@ -132,7 +134,7 @@ body{
   .schools {
     width: 55vw;
     background-color: #121212;
-    padding: 16px;
+    padding: 16px 16px 16px 64px;
     color: #fff;
     ul {
       list-style-type: none;
