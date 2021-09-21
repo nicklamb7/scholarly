@@ -2,11 +2,20 @@ class SchoolsController < ApplicationController
   def index
     @schools = School.all
 
+    if params[:query].present?
+      @schools = @schools.where('name ILIKE ?', "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'schools/list', locals: { schools: @schools }, formats: [:html] }
+    end
+
     @markers = @schools.geocoded.map do |school|
       {
         lat: school.latitude,
-        lng: school.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { school: school })
+        lng: school.longitude
+        # info_window: render_to_string(partial: 'schools/info_window', locals: { school: school })
       }
     end
 
