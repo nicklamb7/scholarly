@@ -1,0 +1,26 @@
+<ul data-search-schools-target="list">
+  <% @schools.each do |school| %>
+  <li>
+    <div class="image-wrapper">
+      <%= cl_image_tag school.thumbnail.key, height: 350, width: 450, crop: :fill if school.thumbnail.attached? == true %>
+    </div>
+    <div class="school-details">
+    <p>
+      <small><%= school.school_type %></small>
+    </p>
+    <h2>
+      <%= link_to school.name, school_path(school) %>
+    </h2>
+    <p>
+      <small>Founded in <%= school.founded_at %> · <%= school.number_of_pupils %> pupils · £<%= school.price %>/term </small>
+    </p>
+    <p>
+      Achieved Grade 5 or above: <%= school.grade_5_or_above %>%
+    </p>
+    <p>
+      Achieved AAB or above: <%= school.aab_or_above %>%
+    </p>
+    </div>
+  </li>
+  <% end %>
+</ul>

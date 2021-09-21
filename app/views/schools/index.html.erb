@@ -1,32 +1,20 @@
 <div class="schools-page">
   <div class="schools">
     <h1>Schools in the UK</h1>
-    <ul>
-      <% @schools.each do |school| %>
-      <li>
-        <div class="image-wrapper">
-          <%= cl_image_tag school.thumbnail.key, height: 350, width: 450, crop: :fill if school.thumbnail.attached? == true %>
-        </div>
-        <div class="school-details">
-        <p>
-          <small><%= school.school_type %></small>
-        </p>
-        <h2>
-          <%= link_to school.name, school_path(school) %>
-        </h2>
-        <p>
-          <small>Founded in <%= school.founded_at %> · <%= school.number_of_pupils %> pupils · £<%= school.price %>/term </small>
-        </p>
-        <p>
-          Achieved Grade 5 or above: <%= school.grade_5_or_above %>%
-        </p>
-        <p>
-          Achieved AAB or above: <%= school.aab_or_above %>%
-        </p>
-        </div>
-      </li>
+    <div data-controller="search-schools">
+      <%= form_with url: schools_path, method: :get, html: { class:
+        '', data: { search_schools_target: 'form' } } do |f| %>
+        <%= f.text_field :query,
+                        class: "form-control",
+                        placeholder: 'Type a school title',
+                        value: params[:query],
+                        data: {
+                          search_schools_target: 'input',
+                          action: 'keyup->search-schools#update'
+                        } %>
       <% end %>
-    </ul>
+      <%= render 'schools/list' %>
+    </div>
   </div>
   <div class="map-section">
     <div

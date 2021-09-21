@@ -4,6 +4,7 @@
 @import "users/signup";
 @import "users/login";
 @import "pages/home";
+@import "schools/index";
 @import "schools/show";
 @import "components/sidebar";
 @import "articles/index";
@@ -33,6 +34,7 @@ nav {
   .left-section {
     display: flex;
     align-items: center;
+    width: 400px;
     ul {
       list-style-type: none;
       display: flex;
@@ -70,6 +72,7 @@ nav {
   }
   .right-section {
     display: flex;
+    width: 400px;
     li {
       margin-right: 4px;
     }
@@ -116,7 +119,7 @@ nav {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  width: 80%;
+  width: 400px;
   padding: 12px 0;
   margin-bottom: 0px;
   border: 0;
@@ -126,7 +129,7 @@ nav {
   text-indent: 0;
   color: #121212;
   outline: 0;
-  height: 100%;
+  height: 44px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
