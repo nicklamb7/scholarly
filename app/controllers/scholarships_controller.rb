@@ -1,6 +1,15 @@
 class ScholarshipsController < ApplicationController
   def index
     @scholarships = Scholarship.all
+
+    if params[:query].present?
+      @scholarships = @scholarships.where('title || description ILIKE ?', "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'scholarships/list', locals: { scholarships: @scholarships }, formats: [:html] }
+    end
   end
 
   def create
