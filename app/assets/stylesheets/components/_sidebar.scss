@@ -5,11 +5,12 @@
   top: 0px;
   left: 0px;
   z-index: 50;
-  background-color: #000;
+  background-color: #121212;
   transition: .2s ease;
   color: #ffffff;
   padding: 100px 16px 16px 0px;
   overflow: hidden;
+  border-right: 1px solid #303030;
   &:hover {
     width: 240px !important;
   }
