@@ -5,7 +5,7 @@
       <% @schools.each do |school| %>
       <li>
         <div class="image-wrapper">
-          <%= cl_image_tag school.thumbnail.key, height: 175, width: 225, crop: :fill if school.thumbnail.attached? == true %>
+          <%= cl_image_tag school.thumbnail.key, height: 350, width: 450, crop: :fill if school.thumbnail.attached? == true %>
         </div>
         <div class="school-details">
         <p>
