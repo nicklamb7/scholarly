@@ -1,14 +1,19 @@
 <div id="scholarships-index-page">
-<h1>Scholarships</h1>
-<div>
-  <ul>
-    <% @scholarships.each do |scholarship| %>
-    <li class="col-10">
-      <p><small><%= scholarship.school.name %></small></p>
-      <h2><%= scholarship.title %></h2>
-      <p><%= scholarship.description %></p>
-    </li>
-    <% end %>
-  </ul>
-</div>
+  <h1>Scholarships</h1>
+  <div data-controller="search-scholarships">
+    <%= form_with url: scholarships_path, method: :get, html: { class:
+      'mb-4', data: { search_scholarships_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                      class: "form-control",
+                      placeholder: 'Search by scholarship type...',
+                      value: params[:query],
+                      data: {
+                        search_scholarships_target: 'input',
+                        action: 'keyup->search-scholarships#update'
+                      } %>
+      <% end %>
+    <div>
+      <%= render 'scholarships/list' %>
+    </div>
+  </div>
 </div>
