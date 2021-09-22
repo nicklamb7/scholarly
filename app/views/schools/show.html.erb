@@ -10,27 +10,31 @@
     </div>
   </div>
 <p><%= @school.address %></p>
+<div class="row">
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%= cl_image_tag @school.thumbnail.key, height: 300, width: 400, crop: :fill if @school.thumbnail.attached? == true %>
-<%= line_chart School.pluck(:grade_5_or_above, :aab_or_above), suffix: "%", xtitle: "Year", ytitle: "AAB or above", loading: "Loading...", empty: "No data", title: "AAB or above" %>
-<p>
-  <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
-</p>
-<p>
-  <small><%= @school.school_type %></small>
-</p>
-<p>
-  Achieved Grade 5 or above: <%= @school.grade_5_or_above %>%
-</p>
-<p>
-  Achieved AAB or above: <%= @school.aab_or_above %>%
-</p>
+  <div class="col-6">
+    <p>
+      <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
+    </p>
+    <p>
+      <small><%= @school.school_type %></small>
+    </p>
+    <p>
+      Achieved Grade 5 or above: <%= @school.grade_5_or_above %>%
+    </p>
+    <p>
+      Achieved AAB or above: <%= @school.aab_or_above %>%
+    </p>
+  </div>
+  <div class="school-thumbnail col-6">
+    <%= cl_image_tag @school.thumbnail.key, height: 300, width: 400, crop: :fill if @school.thumbnail.attached? == true %>
+  </div>
+</div>
 <ul class="list-group">
   <% @school.destinations.each do |destination| %>
     <li class="list-group-item"><%= destination.university %>: <%= destination.number_of_students %></li>
   <% end %>
 </ul>
-
 <p><%= link_to 'Add a scholarship', new_school_scholarship_path(@school) %></p>
 <ul class="list-group">
   <% @school.scholarships.each do |scholarship| %>
