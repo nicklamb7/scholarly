@@ -24,7 +24,6 @@
     <p>
       <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
     </p>
-
     <p>
       Achieved Grade 5 or above: <%= @school.grade_5_or_above %>%
     </p>
@@ -33,6 +32,9 @@
     </p>
     <p>
       <%= @school.address %>
+    </p>
+    <p>
+      <%= @school.summary %>
     </p>
   </div>
   <div class="school-thumbnail col-6">
@@ -44,7 +46,6 @@
     <li class="list-group-item"><%= destination.university %>: <%= destination.number_of_students %></li>
   <% end %>
 </ul>
-<p><%= link_to 'Add a scholarship', new_school_scholarship_path(@school) %></p>
 <ul class="list-group">
   <% @school.scholarships.each do |scholarship| %>
     <li class="list-group-item">
@@ -57,17 +58,9 @@
     </li>
   <% end %>
 </ul>
-<p><%= @school.summary %></p>
-  <%= link_to 'Edit', edit_school_path(@school) %> |
-  <%= link_to 'Back', schools_path %> |
-  <%= link_to "Delete #{@school.name}",
-            school_path(@school),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %> |
-<%= link_to 'Add a destination', new_school_destination_path(@school) %>
-<h2>
-  <%= pluralize @school.reviews.size, "review" %>
-</h2>
+<p>
+  <big>Went to <%= @school.name %>? Share Your Experiences</big> (<%= pluralize @school.reviews.size, "review" %>)
+</p>
 <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
   <div id="reviews" data-insert-in-list-target="items">
     <% if @school.reviews.blank? %>
@@ -85,5 +78,18 @@
       style="width: 100%; height: 480px;"
       data-markers='[{"lat":<%= @school.latitude %>, "lng":<%= @school.longitude %>}]'
       data-mapbox-api-key="pk.eyJ1IjoibmljazIzNDIzNDIiLCJhIjoiY2tzMGYybTN1MWpvejJ1cHNrczV4YmFiNyJ9.YOnTvBEhpVi6_j0XJHu3Sw">
+  </div>
+  <p>
+    <big><%= @school.address %></big>
+  </p>
+  <div>
+    <%= link_to 'Edit', edit_school_path(@school) %> |
+    <%= link_to 'Back', schools_path %> |
+    <%= link_to "Delete #{@school.name}",
+              school_path(@school),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %> |
+    <%= link_to 'Add a destination', new_school_destination_path(@school) %> |
+    <%= link_to 'Add a scholarship', new_school_scholarship_path(@school) %>
   </div>
 </div>
