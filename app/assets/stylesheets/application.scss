@@ -7,6 +7,7 @@
 @import "schools/index";
 @import "schools/show";
 @import "components/sidebar";
+@import "components/flashes";
 @import "articles/index";
 @import "scholarships/index";
 @import "jquery-bar-rating/dist/themes/css-stars";
@@ -211,4 +212,10 @@ body{
   h1 {
     font-size: 26px;
   }
+}
+
+.alerts-bottom {
+  position: fixed;
+  bottom: 16px;
+  left: 96px;
 }
