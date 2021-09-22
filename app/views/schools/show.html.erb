@@ -6,24 +6,33 @@
       <div class="logo-image">
         <%= cl_image_tag @school.logo.key, height: 400, width: 400, crop: :fill if @school.logo.attached? == true  %>
       </div>
-      <h1><%= @school.name %></h1>
+      <h1>
+        <span>
+          <%= @school.school_type %>
+        </span><br />
+        <%= @school.name %>
+      </h1>
     </div>
   </div>
-<p><%= @school.address %></p>
+
 <div class="row">
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   <div class="col-6">
     <p>
-      <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
+      <big>Overview</big>
     </p>
     <p>
-      <small><%= @school.school_type %></small>
+      <small>Founded in <%= @school.founded_at %> · <%= @school.number_of_pupils %> pupils · £<%= @school.price %>/term </small>
     </p>
+
     <p>
       Achieved Grade 5 or above: <%= @school.grade_5_or_above %>%
     </p>
     <p>
       Achieved AAB or above: <%= @school.aab_or_above %>%
+    </p>
+    <p>
+      <%= @school.address %>
     </p>
   </div>
   <div class="school-thumbnail col-6">

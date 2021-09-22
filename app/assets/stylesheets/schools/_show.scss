@@ -7,7 +7,7 @@
 }
 .logo-image {
   position: relative;
-  bottom: 50px;
+  bottom: 32px;
   left: 16px;
   img {
     border-radius: 4px;
@@ -19,9 +19,15 @@
   height: 320px;
   .cover-section-details {
     display: flex;
+    position: relative;
+    bottom: 4px;
+    span {
+      font-size: 14.4px;
+      font-weight: 300;
+    }
   }
   h1 {
-    margin: 16px 32px;
+    margin: 0px 32px;
   }
 }
 .school-thumbnail img {
