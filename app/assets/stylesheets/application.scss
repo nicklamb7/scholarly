@@ -73,7 +73,14 @@ nav {
   }
   .right-section {
     display: flex;
+    justify-content: flex-end;
     width: 400px;
+    .dropdown-item {
+      height: 40px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     li {
       margin-right: 4px;
     }
@@ -98,12 +105,19 @@ nav {
       color: #fff;
     }
   }
+  .right-section .log-out {
+    height: 40px;
+  }
+
 
   #logo {
     font-size: 24px;
     font-family: 'Urbanist', sans-serif;
     margin: 0px;
     color: #fff;
+    &:hover {
+      color: #FFA027;
+    }
   }
   svg {
     margin: 16px;
