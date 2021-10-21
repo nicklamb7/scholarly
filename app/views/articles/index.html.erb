@@ -1,6 +1,6 @@
 <div id="articles-index-page">
   <ul>
-    <% @articles.each do |article| %>
+    <% @articles.sort { |a, b| b.date <=> a.date }.each do |article| %>
       <li class="col-10">
         <%= article.date %>
         <%= article.title %>

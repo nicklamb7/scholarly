@@ -1,5 +1,5 @@
 <ul data-search-schools-target="list">
-  <% @schools.each do |school| %>
+  <% @schools.sort { |a, b| a.name <=> b.name }.each do |school| %>
   <li>
     <div class="image-wrapper">
       <%= cl_image_tag school.thumbnail.key, height: 350, width: 450, crop: :fill if school.thumbnail.attached? == true %>

@@ -1,5 +1,5 @@
 <ul data-search-scholarships-target="list">
-  <% @scholarships.each do |scholarship| %>
+  <% @scholarships.sort { |a, b| a.school.name <=> b.school.name }.each do |scholarship| %>
   <li class="col-10">
     <p><small><%= scholarship.school.name %></small></p>
     <h2><%= scholarship.title %></h2>
