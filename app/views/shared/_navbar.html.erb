@@ -13,6 +13,7 @@
     </ul>
   </div>
   <div class="middle-section">
+  <% if !current_page?(controller: 'schools', action: 'index') %>
     <%= form_tag schools_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -21,6 +22,7 @@
       %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
+  <% end %>
   </div>
   <div class="right-section">
   <ul>
