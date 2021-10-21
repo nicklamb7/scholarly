@@ -1,7 +1,7 @@
 <div id="articles-index-page">
   <ul>
     <% @articles.sort { |a, b| b.date <=> a.date }.each do |article| %>
-      <li class="col-10">
+      <li class="col-8">
         <%= article.date %>
         <%= article.title %>
         <%= article.description %>
