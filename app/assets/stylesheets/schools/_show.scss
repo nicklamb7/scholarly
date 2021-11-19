@@ -1,6 +1,6 @@
 .cover-image {
   height: 200px;
-  width: 1120px;
+  width: 100%;
   border-radius: 12px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,6 +32,8 @@
 }
 .school-thumbnail img {
   border-radius: 12px;
+  width: 100%;
+  height: auto;
 }
 .review-section {
   display: flex;
