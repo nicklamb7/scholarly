@@ -41,6 +41,8 @@
     <%= cl_image_tag @school.thumbnail.key, height: 600, width: 800, crop: :fill if @school.thumbnail.attached? == true %>
   </div>
 </div>
+<%
+=begin %>
 <ul class="list-group">
   <% @school.destinations.each do |destination| %>
     <li class="list-group-item"><%= destination.university %>: <%= destination.number_of_students %></li>
@@ -58,6 +60,8 @@
     </li>
   <% end %>
 </ul>
+<%
+=end %>
 <div>
   <p>
     <big><%= @school.name %> Reviews</big>
