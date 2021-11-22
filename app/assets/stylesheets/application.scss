@@ -32,6 +32,9 @@ nav {
   align-items: center !important;
   color: #fff !important;
   z-index: 100 !important;
+  .nav-link {
+    font-size: 14.4px;
+  }
   .left-section {
     display: flex;
     align-items: center;
