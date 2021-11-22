@@ -17,7 +17,7 @@
 
 <div class="row">
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-  <div class="col-6">
+  <div class="col-8">
     <p>
       <big>Overview</big>
     </p>
@@ -37,7 +37,7 @@
       <%= @school.summary %>
     </p>
   </div>
-  <div class="school-thumbnail col-6">
+  <div class="school-thumbnail col-4">
     <%= cl_image_tag @school.thumbnail.key, height: 300, width: 400, crop: :fill if @school.thumbnail.attached? == true %>
   </div>
 </div>
