@@ -60,6 +60,8 @@ nav {
   }
   .middle-section {
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
     form {
       display: flex;
       align-items: center;
