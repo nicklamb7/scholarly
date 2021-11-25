@@ -1,6 +1,6 @@
 <div id="scholarships-index-page">
   <h1>Scholarships</h1>
-  <div data-controller="search-scholarships">
+  <div data-controller="search-scholarships" class="col-12">
     <%= form_with url: scholarships_path, method: :get, html: { class:
       'mb-4', data: { search_scholarships_target: 'form' } } do |f| %>
       <%= f.text_field :query,
