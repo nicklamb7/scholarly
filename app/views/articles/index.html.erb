@@ -2,6 +2,9 @@
   <ul>
     <% @articles.sort { |a, b| b.date <=> a.date }.each do |article| %>
       <li class="col-8">
+        <div class="articles-image-wrapper">
+          <img src="" alt="">
+        </div>
         <%= article.date %>
         <%= article.title %>
         <%= article.description %>

@@ -15,5 +15,12 @@
     border-radius: 12px;
     margin: 24px auto;
     background-color: #282828;
+    padding: 0px;
+    overflow: hidden;
+    .articles-image-wrapper {
+      height: 275px;
+      width: 100%;
+      background-color: #121212;
+    }
   }
 }
