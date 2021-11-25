@@ -1,22 +1,26 @@
-<%= simple_form_for(@school) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :school_type %>
-  <%= f.text_field :school_type %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :summary %>
-  <%= f.text_field :summary %>
-  <%= f.label :founded_at %>
-  <%= f.number_field :founded_at %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :grade_5_or_above %>
-  <%= f.number_field :grade_5_or_above %>
-  <%= f.label :aab_or_above %>
-  <%= f.number_field :aab_or_above %>
-  <%= f.input :thumbnail, as: :file %>
-  <%= f.input :logo, as: :file %>
-  <%= f.input :cover, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="row justify-content-center">
+  <div class="col-10">
+    <%= simple_form_for(@school) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :school_type %>
+      <%= f.text_field :school_type %>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+      <%= f.label :summary %>
+      <%= f.text_field :summary %>
+      <%= f.label :founded_at %>
+      <%= f.number_field :founded_at %>
+      <%= f.label :price %>
+      <%= f.number_field :price %>
+      <%= f.label :grade_5_or_above %>
+      <%= f.number_field :grade_5_or_above %>
+      <%= f.label :aab_or_above %>
+      <%= f.number_field :aab_or_above %>
+      <%= f.input :thumbnail, as: :file %>
+      <%= f.input :logo, as: :file %>
+      <%= f.input :cover, as: :file %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
