@@ -1,12 +1,17 @@
 <ul data-search-scholarships-target="list">
   <% @scholarships.sort { |a, b| a.school.name <=> b.school.name }.each do |scholarship| %>
-  <li class="col-10">
-    <div class="logo-wrapper">
-        <%= cl_image_tag scholarship.school.logo.key, height: 400, width: 400, crop: :fill if scholarship.school.logo.attached? == true  %>
+  <li class="scholarship-item col-10">
+    <div class="scholarship-item-left">
+        <div class="logo-wrapper">
+          <%= cl_image_tag scholarship.school.logo.key, height: 400, width: 400, crop: :fill if scholarship.school.logo.attached? == true  %>
+      </div>
     </div>
-    <p><small><%= scholarship.school.name %></small></p>
-    <h2><%= scholarship.title %></h2>
-    <p><%= scholarship.description %></p>
+    <div class="scholarship-item-right">
+      <p><small><%= scholarship.school.name %></small></p>
+      <h2><%= scholarship.title %></h2>
+      <p><%= scholarship.description.truncate(250) %></p>
+    </div>
+
   </li>
   <% end %>
 </ul>

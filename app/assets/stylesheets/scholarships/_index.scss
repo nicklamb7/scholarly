@@ -16,13 +16,21 @@
     list-style-type: none;
   }
   li {
-    min-height: 300px;
+    min-height: 200px;
     border-top: 1px solid #303030;
     margin: 24px auto;
     padding: 16px;
     font-weight: 300;
     &:last-child {
       border-bottom: 1px solid #303030;
+    }
+  }
+  .scholarship-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &-left {
+      margin-right: 16px;
     }
   }
   .logo-wrapper {
@@ -33,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     img {
       height: 100%;
     }
