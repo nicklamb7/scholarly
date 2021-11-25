@@ -1,18 +1,21 @@
 <div id="articles-index-page">
   <ul>
     <% @articles.sort { |a, b| b.date <=> a.date }.each do |article| %>
-      <li class="col-8">
+      <li class="col-7">
         <div class="articles-image-wrapper">
           <img src="" alt="">
         </div>
         <div class="articles-content">
-          <%= article.date %>
-          <%= article.title %>
-          <%= article.description %>
-          <%= link_to "Delete",
+          <p class="articles-content-top"><strong>News</strong> · <%= article.date %></p>
+          <h3><%= article.title %></h3>
+          <p><%= article.description %></p>
+          <p>
+            <small><%= link_to "Delete",
                 article_path(article),
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
+            </small>
+          </p>
         </div>
       </li>
     <% end %>
