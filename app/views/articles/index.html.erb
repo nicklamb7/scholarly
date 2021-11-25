@@ -5,13 +5,15 @@
         <div class="articles-image-wrapper">
           <img src="" alt="">
         </div>
-        <%= article.date %>
-        <%= article.title %>
-        <%= article.description %>
-        <%= link_to "Delete",
-              article_path(article),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
+        <div class="articles-content">
+          <%= article.date %>
+          <%= article.title %>
+          <%= article.description %>
+          <%= link_to "Delete",
+                article_path(article),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+        </div>
       </li>
     <% end %>
   </ul>
