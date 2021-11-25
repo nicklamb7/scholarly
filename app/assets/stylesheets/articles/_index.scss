@@ -25,6 +25,13 @@
       height: 275px;
       width: 100%;
       background-color: #121212;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
     }
     .articles-content {
       padding: 24px;
