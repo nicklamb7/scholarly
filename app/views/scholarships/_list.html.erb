@@ -1,7 +1,9 @@
 <ul data-search-scholarships-target="list">
   <% @scholarships.sort { |a, b| a.school.name <=> b.school.name }.each do |scholarship| %>
   <li class="col-10">
-    <%= cl_image_tag scholarship.school.logo.key, height: 400, width: 400, crop: :fill if scholarship.school.logo.attached? == true  %>
+    <div class="logo-wrapper">
+        <%= cl_image_tag scholarship.school.logo.key, height: 400, width: 400, crop: :fill if scholarship.school.logo.attached? == true  %>
+    </div>
     <p><small><%= scholarship.school.name %></small></p>
     <h2><%= scholarship.title %></h2>
     <p><%= scholarship.description %></p>
