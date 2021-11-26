@@ -38,6 +38,10 @@
       opacity: 0.75;
     }
   }
+  .scholarships-list .form-control {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
   .logo-wrapper {
     height: 100px;
     width: 100px;
